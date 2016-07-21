@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AssignmentOne
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ClientHome.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class ClientHome : Page
     {
-        public MainWindow()
+        public ClientHome()
         {
             InitializeComponent();
         }
