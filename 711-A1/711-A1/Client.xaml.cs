@@ -6,12 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace AssignmentOne
+namespace _711_A1
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Interaction logic for ClientApp.xaml
     /// </summary>
-    public partial class App : Application
+    public partial class ClientApp : Application
     {
     }
 }

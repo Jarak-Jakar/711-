@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AssignmentOne
+namespace _711_A1
 {
     /// <summary>
-    /// Interaction logic for ClientHome.xaml
+    /// Interaction logic for ClientWindow.xaml
     /// </summary>
-    public partial class ClientHome : Page
+    public partial class ClientWindow : Window
     {
-        public ClientHome()
+        public ClientWindow()
         {
             InitializeComponent();
         }

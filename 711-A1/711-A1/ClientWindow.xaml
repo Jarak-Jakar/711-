@@ -1,0 +1,15 @@
+﻿<Window x:Class="_711_A1.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_711_A1"
+        mc:Ignorable="d"
+        Title="Client" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="RefreshButton" Content="Refresh Files" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="DownloadButton" Content="Download Selected File" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="DisplayButton" Content="Display Selected File" HorizontalAlignment="Left" Margin="224,300,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

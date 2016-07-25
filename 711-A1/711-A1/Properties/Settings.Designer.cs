@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AssignmentOne.Properties
+namespace _711_A1.Properties
 {
 
 
