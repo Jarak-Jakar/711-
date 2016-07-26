@@ -20,29 +20,29 @@ namespace _711_A1
         // TODO: Add your service operations here
 
         [OperationContract]
-        string GetFile(string fileName);
+        byte[] GetFile(string fileName);
 
         [OperationContract]
-        string GetFileList();
+        string[] GetFileList();
     }
 
-    [ServiceContract]
-    public interface ICacheService
-    {
-        //[OperationContract]
-        //string GetData(int value);
+    //[ServiceContract]
+    //public interface ICacheService
+    //{
+    //    //[OperationContract]
+    //    //string GetData(int value);
 
-        //[OperationContract]
-        //CompositeType GetDataUsingDataContract(CompositeType composite);
+    //    //[OperationContract]
+    //    //CompositeType GetDataUsingDataContract(CompositeType composite);
 
-        // TODO: Add your service operations here
+    //    // TODO: Add your service operations here
 
-        [OperationContract]
-        //string GetFile(string fileName);
+    //    [OperationContract]
+    //    //string GetFile(string fileName);
 
-        [OperationContract]
-        //string GetFileList();
-    }
+    //    [OperationContract]
+    //    //string GetFileList();
+    //}
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "_711_A1.ContractType".

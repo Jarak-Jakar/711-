@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -27,14 +28,14 @@ namespace _711_A1
         //    }
         //    return composite;
         //}
-        string IServerService.GetFile(string fileName)
+        byte[] IServerService.GetFile(string fileName)
         {
-            throw new NotImplementedException();
+            return File.ReadAllBytes(fileName);
         }
 
-        string IServerService.GetFileList()
+        string[] IServerService.GetFileList()
         {
-            throw new NotImplementedException();
+            return Directory.GetFiles(Directory.GetCurrentDirectory() + "\\server");
         }
     }
 }
