@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "711-A1-Services", "711-A1-W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "711-A1-Server", "711-A1-Server\711-A1-Server.csproj", "{8CE90553-BBBA-4CA1-BD00-13B276BB6892}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "711-A1-Cache", "711-A1-Cache\711-A1-Cache.csproj", "{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8CE90553-BBBA-4CA1-BD00-13B276BB6892}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE90553-BBBA-4CA1-BD00-13B276BB6892}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CE90553-BBBA-4CA1-BD00-13B276BB6892}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
