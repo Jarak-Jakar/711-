@@ -36,6 +36,7 @@ namespace _711_A1
         string[] IServerService.GetFileList()
         {
             return Directory.GetFiles(Directory.GetCurrentDirectory() + "\\server");
+            //return Directory.GetFiles("\\server");
         }
     }
 }
