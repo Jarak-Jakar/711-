@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "711-A1-Server", "711-A1-Server\711-A1-Server.csproj", "{8CE90553-BBBA-4CA1-BD00-13B276BB6892}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "711-A1-Cache", "711-A1-Cache\711-A1-Cache.csproj", "{96BAAC38-CB0A-4C81-902C-A2DE2A29D4CF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2CD9EF64-7D15-44B4-AA03-5513667F0EBE} = {2CD9EF64-7D15-44B4-AA03-5513667F0EBE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

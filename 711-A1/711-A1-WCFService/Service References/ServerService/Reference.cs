@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _711_A1_Cache.ServiceReference1 {
+namespace _711_A1_WCFService.ServerService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IServerService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServerService.IServerService")]
     public interface IServerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServerService/GetFile", ReplyAction="http://tempuri.org/IServerService/GetFileResponse")]
@@ -29,12 +29,12 @@ namespace _711_A1_Cache.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServerServiceChannel : _711_A1_Cache.ServiceReference1.IServerService, System.ServiceModel.IClientChannel {
+    public interface IServerServiceChannel : _711_A1_WCFService.ServerService.IServerService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServerServiceClient : System.ServiceModel.ClientBase<_711_A1_Cache.ServiceReference1.IServerService>, _711_A1_Cache.ServiceReference1.IServerService {
+    public partial class ServerServiceClient : System.ServiceModel.ClientBase<_711_A1_WCFService.ServerService.IServerService>, _711_A1_WCFService.ServerService.IServerService {
         
         public ServerServiceClient() {
         }

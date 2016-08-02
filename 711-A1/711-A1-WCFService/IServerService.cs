@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -20,7 +21,17 @@ namespace _711_A1
         // TODO: Add your service operations here
 
         [OperationContract]
-        byte[] GetFile(string fileName);
+        Stream GetFile(string fileName);
+
+        [OperationContract]
+        string[] GetFileList();
+    }
+
+    [ServiceContract]
+    public interface ICacheService
+    {
+        [OperationContract]
+        Stream GetFile(string fileName);
 
         [OperationContract]
         string[] GetFileList();

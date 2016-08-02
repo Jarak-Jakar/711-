@@ -21,7 +21,7 @@ namespace _711_A1
     /// </summary>
     public partial class CacheWindow : Window
     {
-        ServerServiceClient client;
+        private ServerServiceClient client;
 
         public CacheWindow()
         {
