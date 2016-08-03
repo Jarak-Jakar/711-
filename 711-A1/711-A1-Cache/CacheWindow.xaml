@@ -9,6 +9,8 @@
     <DockPanel>
         <WrapPanel VerticalAlignment="Bottom" Margin="0" Width="517" DockPanel.Dock="Bottom">
             <Button x:Name="listFilesButton" Content="Get list of files on server" HorizontalAlignment="Left" Click="listFilesButton_Click" VerticalAlignment="Bottom"/>
+            <Button x:Name="viewFilesButton" Content="View cached files"/>
+            <Button x:Name="viewLogButton" Content="View log"/>
 
         </WrapPanel>
         <ListView x:Name="filesListView" Margin="0,0,0,5" DockPanel.Dock="Top">

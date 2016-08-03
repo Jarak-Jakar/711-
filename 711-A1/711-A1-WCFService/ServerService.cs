@@ -31,8 +31,9 @@ namespace _711_A1
         //}
         Stream IServerService.GetFile(string fileName)
         {
-            FileStream imageFile = File.OpenRead("\\cache\\" + fileName);
-            return imageFile;
+            //FileStream imageFile = File.OpenRead("\\server\\" + fileName);
+            //return imageFile;
+            return File.OpenRead("\\server\\" + fileName);
         }
 
         string[] IServerService.GetFileList()
@@ -56,7 +57,7 @@ namespace _711_A1
              * That the file is properly opened and closed every time */
         }
 
-        async Stream ICacheService.GetFile(string fileName)
+         Stream ICacheService.GetFile(string fileName)
         {
             using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "\\CacheLog.txt"))
             {
@@ -65,13 +66,21 @@ namespace _711_A1
                 {
                     logout.WriteLineAsync(string.Format("Response: Returned cached file {0}", fileName));
                     //return new FileStream("\\cache\\" + fileName, FileMode.Open);
-                    FileStream imageFile = File.OpenRead("\\cache\\" + fileName);
-                    return imageFile;
+                    //FileStream imageFile = File.OpenRead("\\cache\\" + fileName);
+                    //return imageFile;
+                    return File.OpenRead("\\cache\\" + fileName);
                 }
                 else
                 {
                     logout.WriteLineAsync(string.Format("Response: Requested file {0} from server, stored it in cache, and then returned it", fileName));
-                    Stream fileToCache = await server.GetFileAsync(fileName);
+                    using (FileStream fileToCache = server.GetFile(fileName) as FileStream)
+                    {
+                        using (FileStream fileOut = File.OpenWrite("\\cache\\" + fileName))
+                        {
+                            fileToCache.CopyToAsync(fileOut);
+                            return fileToCache;
+                        }
+                    }                   
 
                     //return fileToCache;
                     //return server.GetFile(fileName);
