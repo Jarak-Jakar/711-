@@ -5,22 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_711_A1"
         mc:Ignorable="d"
-        Title="Cache" Height="350" Width="525">
+        Title="Cache" Height="250" Width="400">
     <DockPanel>
         <WrapPanel VerticalAlignment="Bottom" Margin="0" Width="517" DockPanel.Dock="Bottom">
             <Button x:Name="listFilesButton" Content="Get list of files on server" HorizontalAlignment="Left" Click="listFilesButton_Click" VerticalAlignment="Bottom"/>
-            <Button x:Name="viewFilesButton" Content="View cached files"/>
-            <Button x:Name="viewLogButton" Content="View log"/>
+            <Button x:Name="viewFilesButton" Content="View cached files" Click="viewFilesButton_Click"/>
+            <Button x:Name="viewLogButton" Content="View log" Click="viewLogButton_Click"/>
+            <Button x:Name="clearButton" Content="Clear cache"/>
 
         </WrapPanel>
-        <ListView x:Name="filesListView" Margin="0,0,0,5" DockPanel.Dock="Top">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-
-
+        <StackPanel>
+            <TextBox x:Name="logBox" TextWrapping="Wrap" Text="Log" Margin="0,0,0,0" IsReadOnly="True">
+                
+            </TextBox>
+            <ListView x:Name="filesListView" Margin="0,0,0,5" IsEnabled="False" Visibility="Collapsed">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </DockPanel>
 </Window>

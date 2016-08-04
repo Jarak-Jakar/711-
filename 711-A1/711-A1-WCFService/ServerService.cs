@@ -59,7 +59,7 @@ namespace _711_A1
 
          Stream ICacheService.GetFile(string fileName)
         {
-            using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "\\CacheLog.txt"))
+            using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "CacheLog.txt"))
             {
                 logout.WriteLineAsync(string.Format("\nUser request: Get file {2} at {0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString(), fileName));
                 if (File.Exists("\\cache\\" + fileName))
@@ -91,7 +91,7 @@ namespace _711_A1
 
         string[] ICacheService.GetFileList()
         {
-            using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "\\CacheLog.txt"))
+            using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "CacheLog.txt"))
             {
                 logout.WriteLineAsync(string.Format("\nUser request: Get file list at {0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString()));
                 logout.WriteLineAsync(string.Format("Response: Called GetFileList() on the server, and returned the results"));

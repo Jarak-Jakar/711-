@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using _711_A1_Cache.ServiceReference1;
+using System.IO;
 
 namespace _711_A1
 {
@@ -31,9 +32,31 @@ namespace _711_A1
 
         private void listFilesButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] serverFileList = client.GetFileList();
-            filesListView.ItemsSource = serverFileList;
-            
+            logBox.Visibility = Visibility.Collapsed;
+            logBox.IsEnabled = false;
+            filesListView.ItemsSource = client.GetFileList();
+            filesListView.IsEnabled = true;
+            filesListView.Visibility = Visibility.Visible;
+            //string[] serverFileList = client.GetFileList();
+            //filesListView.ItemsSource = serverFileList;
+            //filesListView.ItemsSource = client.GetFileList();
+            //string[] cacheFileList = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\cache");
+            //filesListView.ItemsSource = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\cache");
+        }
+
+        private void viewFilesButton_Click(object sender, RoutedEventArgs e)
+        {
+            filesListView.IsEnabled = true;
+            filesListView.Visibility = Visibility.Visible;
+            filesListView.ItemsSource = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\cache");
+        }
+
+        private void viewLogButton_Click(object sender, RoutedEventArgs e)
+        {
+            filesListView.Visibility = Visibility.Collapsed;
+            filesListView.IsEnabled = false;
+            logBox.Visibility = Visibility.Visible;
+            logBox.IsEnabled = true;
         }
     }
 }
