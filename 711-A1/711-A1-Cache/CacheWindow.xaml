@@ -11,7 +11,7 @@
             <Button x:Name="listFilesButton" Content="Get list of files on server" HorizontalAlignment="Left" Click="listFilesButton_Click" VerticalAlignment="Bottom"/>
             <Button x:Name="viewFilesButton" Content="View cached files" Click="viewFilesButton_Click"/>
             <Button x:Name="viewLogButton" Content="View log" Click="viewLogButton_Click"/>
-            <Button x:Name="clearButton" Content="Clear cache"/>
+            <Button x:Name="clearButton" Content="Clear cache" Click="clearButton_Click"/>
 
         </WrapPanel>
         <StackPanel>

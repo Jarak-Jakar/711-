@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using _711_A1_Cache.ServiceReference1;
 using System.IO;
+using System.ServiceModel;
+using System.ServiceModel.Description;
+using _711_A1;
 
 namespace _711_A1
 {
@@ -28,6 +31,38 @@ namespace _711_A1
         {
             InitializeComponent();
             client = new ServerServiceClient();
+
+            Uri baseAddress = new Uri("http://localhost:8082/711A1/Cache");
+
+            ServiceHost selfHost = new ServiceHost(typeof(CacheService), baseAddress);
+
+            try
+            {
+                BasicHttpBinding bsb = new BasicHttpBinding();
+                bsb.TransferMode = TransferMode.StreamedResponse;
+                ServiceEndpoint serverEndpoint = selfHost.AddServiceEndpoint(typeof(ICacheService), bsb, "CacheService");
+                DispatcherSynchronizationBehavior dmb = new DispatcherSynchronizationBehavior();
+                dmb.AsynchronousSendEnabled = true;
+                serverEndpoint.EndpointBehaviors.Add(dmb);
+
+                ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+                smb.HttpGetEnabled = true;
+                selfHost.Description.Behaviors.Add(smb);
+
+                selfHost.Open();
+                //Console.WriteLine("The server service is ready");
+                //Console.WriteLine("Press Enter to terminate service");
+                //Console.WriteLine();
+                //Console.ReadLine();
+
+                //selfHost.Close();
+            }
+            catch (CommunicationException ce)
+            {
+                //Console.Error.WriteLine("An exception occurred: {0}", ce.Message);
+                MessageBox.Show(ce.Message, "Error deleting cached files", MessageBoxButton.OK, MessageBoxImage.Error);
+                selfHost.Abort();
+            }
         }
 
         private void listFilesButton_Click(object sender, RoutedEventArgs e)
@@ -57,6 +92,25 @@ namespace _711_A1
             filesListView.IsEnabled = false;
             logBox.Visibility = Visibility.Visible;
             logBox.IsEnabled = true;
+            logBox.Text = File.ReadAllText(Directory.GetCurrentDirectory() + "CacheLog.txt");
+        }
+
+        private void clearButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string[] fileList = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\cache\\");
+                Parallel.ForEach(fileList, (fileName => File.Delete(fileName)));
+                using (StreamWriter logout = File.AppendText(Directory.GetCurrentDirectory() + "CacheLog.txt"))
+                {
+                    logout.WriteLineAsync(string.Format("\nUser request: Delete cached files", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString()));
+                    logout.WriteLineAsync(string.Format("Response: Deleted cached files"));
+                }
+            }
+            catch (Exception except)
+            {
+                MessageBox.Show(except.Message, "Error deleting cached files", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

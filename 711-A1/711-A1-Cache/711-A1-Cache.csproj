@@ -136,6 +136,12 @@
   <ItemGroup>
     <None Include="Service References\ServiceReference1\Server.disco" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\711-A1-WCFService\711-A1-Services.csproj">
+      <Project>{2CD9EF64-7D15-44B4-AA03-5513667F0EBE}</Project>
+      <Name>711-A1-Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

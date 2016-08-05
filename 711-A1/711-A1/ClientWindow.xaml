@@ -5,11 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_711_A1"
         mc:Ignorable="d"
-        Title="Client" Height="350" Width="525">
-    <Grid>
-        <Button x:Name="RefreshButton" Content="Refresh Files" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="DownloadButton" Content="Download Selected File" HorizontalAlignment="Left" Margin="90,300,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="DisplayButton" Content="Display Selected File" HorizontalAlignment="Left" Margin="224,300,0,0" VerticalAlignment="Top"/>
+        Title="Client" Height="307.719" Width="339.43">
+    <DockPanel>
 
-    </Grid>
+        <WrapPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" DockPanel.Dock="Bottom">
+            <Button x:Name="RefreshButton" Content="Refresh File List" HorizontalAlignment="Left" VerticalAlignment="Top" Click="RefreshButton_Click"/>
+            <Button x:Name="DownloadButton" Content="Download Selected File" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DownloadButton_Click"/>
+            <Button x:Name="openFileButton" Content="Open Selected File" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisplayButton_Click"/>
+
+        </WrapPanel>
+        <ListView x:Name="filesListView" DockPanel.Dock="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </DockPanel>
 </Window>

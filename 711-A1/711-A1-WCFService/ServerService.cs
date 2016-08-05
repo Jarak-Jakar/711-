@@ -78,6 +78,7 @@ namespace _711_A1
                         using (FileStream fileOut = File.OpenWrite("\\cache\\" + fileName))
                         {
                             fileToCache.CopyToAsync(fileOut);
+                            fileOut.FlushAsync();
                             return fileToCache;
                         }
                     }                   

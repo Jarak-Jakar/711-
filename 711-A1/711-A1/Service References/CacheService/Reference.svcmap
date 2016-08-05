@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="35837c16-66c2-4613-9de2-bdb438ca6286" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8082/711A1/Cache" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Cache.disco" MetadataType="Disco" ID="afb06f2d-92ef-437b-852b-768a5aeb5c83" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?disco" />
+    <MetadataFile FileName="Cache.xsd" MetadataType="Schema" ID="70e28bc7-a9ae-4276-ab62-c02215233c17" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?xsd=xsd0" />
+    <MetadataFile FileName="CacheService.wsdl" MetadataType="Wsdl" ID="c3db8f73-5022-4d58-bdb8-e3ba8372deea" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?wsdl" />
+    <MetadataFile FileName="Cache1.xsd" MetadataType="Schema" ID="de4ec312-fff0-47b4-ab5a-97dc46209706" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?xsd=xsd2" />
+    <MetadataFile FileName="Cache2.xsd" MetadataType="Schema" ID="16639ef5-e2a6-4bcf-ae94-bf0c8d4412d4" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?xsd=xsd3" />
+    <MetadataFile FileName="Cache3.xsd" MetadataType="Schema" ID="9baaa59b-d0c3-4a46-bde5-25e31f85842e" SourceId="1" SourceUrl="http://localhost:8082/711A1/Cache?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
